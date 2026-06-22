@@ -402,6 +402,7 @@ all:: $(BOOTSTRAP_RAW)
 $(BOOTSTRAP_RAW): $(BOOTSTRAP_ELF_NAME)
 	@$(GEN_MESSAGE)
 	$(VERBOSE)$(OBJCOPY) -O binary $< $@
+	$(VERBOSE)L4DIR=$(L4DIR) $(SRC_DIR)/build.pl postprocess_raw $(ARCH) "$@"
 	$(VERBOSE)chmod -x $@
 
 %.gzip: %
