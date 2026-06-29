@@ -316,7 +316,6 @@ all:: $(addprefix $(IMAGES_DIR)/,$(INSTALL_FILES))
 	  find $(if $(od),$(od),.) -name $$f -printf " %30f:  %s\n"; \
 	done
 	$(if $(LDFLAGS_$(od)bootstrap.elf),$(VERBOSE)echo "  Start address: $(BOOTSTRAP_LINKADDR)")
-	$(VERBOSE)echo "  --> Build-Nr: $$(cat .build_nr)"
 
 # install images into easy to reach directory in build dir
 $(IMAGES_DIR)/%: $(od)%
